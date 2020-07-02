@@ -49,7 +49,7 @@ input {
 .notes-container {
   margin-top: 12px;
   overflow-y: scroll;
-  height: 415px;
+  max-height: 415px;
 }
 
 ::-webkit-scrollbar {
