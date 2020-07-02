@@ -1,0 +1,118 @@
+body {
+  background-color: cornflowerblue;
+  overflow: hidden;
+}
+
+.notes-app {
+  background-color: white;
+  max-width: 330px;
+  border: 1px solid white;
+  margin: auto;
+  max-width: 370px;
+  font-family: sans-serif;
+  padding: 8px;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 100;
+  border: none;
+}
+
+.action-buttons {
+  color: gray;
+}
+
+.add-note {
+  font-size: 30px;
+}
+
+.close-note {
+  font-size: 26px;
+  margin-left: 310px;
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+input {
+  margin-top: 10px;
+  width: 350px;
+  height: 28px;
+  background-color: rgb(245, 237, 237);
+  border: 1px solid rgb(245, 237, 237);
+}
+
+.notes-container {
+  margin-top: 12px;
+  overflow-y: scroll;
+  height: 415px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 223, 44, 0.877);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(238, 236, 149, 0.877);
+}
+
+.note {
+  max-height: 150px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  font-size: 0.8em;
+}
+
+.design {
+  background-color: rgba(226, 223, 44, 0.877);
+  height: 8px;
+  border-collapse: collapse;
+}
+
+.time-container {
+  background-color: rgba(238, 236, 149, 0.877);
+}
+
+.time {
+  margin-top: 3px;
+  margin-left: 280px;
+  font-size: 10px;
+}
+
+.main-note {
+  padding: 4px;
+  background-color: rgba(238, 236, 149, 0.877);
+}
+
+.modal {
+  background-color: rgba(226, 223, 44, 0.877);
+}
+
+.text-area {
+  font-size: 0.8em;
+  background-color: rgba(238, 236, 149, 0.877);
+}
+
+.del-notes {
+  margin-left: 4px;
+  font-weight: bold;
+}
+.del-notes > button {
+  font-size: small;
+  background-color: rgba(238, 236, 149, 0.877);
+}
+.close-popup-btn {
+  margin-left: 10px;
+}
