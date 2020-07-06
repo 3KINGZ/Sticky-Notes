@@ -73,6 +73,7 @@ input {
   margin-bottom: 10px;
   border-radius: 2px;
   font-size: 0.8em;
+  text-align: justify;
 }
 
 .design {
@@ -92,7 +93,7 @@ input {
 }
 
 .main-note {
-  padding: 4px;
+  padding: 4px 10px 4px 10px;
   background-color: rgba(238, 236, 149, 0.877);
 }
 
