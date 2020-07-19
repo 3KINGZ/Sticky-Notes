@@ -55,7 +55,7 @@ function App() {
 
   //function for saving text to input
   function onSearch(event) {
-    setSearchText(event.target.value);
+    setSearchText(event.target.value.toLowerCase());
   }
 
   //function for delNotes
