@@ -33,16 +33,18 @@ function App() {
   function saveNote(event) {
     const today = new Date();
     if (input.length > 0) {
-      setNotes([
-        ...notes,
-        {
-          id: `${Math.floor(Math.random() * 100)}${
-            input[Math.floor(Math.random() * input.length)]
-          }`,
-          time: `${today.getHours()}:${today.getMinutes()}`,
-          item: input,
-        },
-      ]);
+      setNotes(
+        [
+          ...notes,
+          {
+            id: `${Math.floor(Math.random() * 100)}${
+              input[Math.floor(Math.random() * input.length)]
+            }`,
+            time: `${today.getHours()}:${today.getMinutes()}`,
+            item: input,
+          },
+        ].reverse()
+      );
       setInput("");
       setPopUp(false);
     }
@@ -60,7 +62,7 @@ function App() {
 
   //function for delNotes
   function deleteNotes(id) {
-    setNotes([...notes.filter((note) => note.id !== id)]);
+    setNotes([...notes.filter((note) => note.id !== id)].reverse());
   }
 
   return (
@@ -87,7 +89,6 @@ function App() {
       />
       <div className="notes-container">
         {notes
-          .reverse()
           .filter((note) => note.item.toLowerCase().includes(searchText))
           .map((list) => (
             <Note
