@@ -48,7 +48,7 @@ input {
 
 .notes-container {
   margin-top: 12px;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 415px;
 }
 

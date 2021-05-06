@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Buttons from "./components/Buttons";
 import NoteInput from "./components/NoteInput";
 import Note from "./components/Note";
@@ -6,15 +6,7 @@ import Note from "./components/Note";
 function App() {
   //states
   const [notes, setNotes] = useState(
-    JSON.parse(localStorage.getItem("notes")) ||
-      [
-        // {
-        //   id: 0,
-        //   time: "7:42 pm",
-        //   item:
-        //     "just checking if things work out this will be a really long web dev is getting too complicated just speaking what's in my mind while typing the lenovo keyboard is really good you know akes me enjoy typing(coding) just cruising i hhope no worries are coming my way that's what i hate the most you know",
-        // },
-      ]
+    JSON.parse(localStorage.getItem("notes")) || []
   );
   const [popUp, setPopUp] = useState(false);
   const [input, setInput] = useState("");
@@ -33,25 +25,23 @@ function App() {
   function saveNote(event) {
     const today = new Date();
     if (input.length > 0) {
-      setNotes(
-        [
-          ...notes,
-          {
-            id: `${Math.floor(Math.random() * 100)}${
-              input[Math.floor(Math.random() * input.length)]
-            }`,
-            time: `${today.getHours()}:${today.getMinutes()}`,
-            item: input,
-          },
-        ].reverse()
-      );
+      setNotes([
+        {
+          id: `${Math.floor(Math.random() * 100)}${
+            input[Math.floor(Math.random() * input.length)]
+          }`,
+          time: `${today.getHours()}:${today.getMinutes()}`,
+          item: input,
+        },
+        ...notes,
+      ]);
       setInput("");
       setPopUp(false);
     }
   }
 
   //useEffect for saving localStorage because of it's side effect
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   });
 
